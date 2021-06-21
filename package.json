@@ -1,12 +1,13 @@
 {
     "name": "student-cell-api",
-    "version": "1.0.1",
+    "version": "1.0.2",
     "description": "",
     "main": "source/server.ts\u001b[D\u001b[D\u001b[D\u001b[D\u001b[D\u001b[D\u001b[D\u001b[D\u001b[D\u001b[D\u001b[D\u001b[D\u001b[D\u001b[D\u001b[D\u001b[3~\u001b[3~\u001b[3~\u001b[C\u001b[C\u001b[C\u001b[C\u001b[C\u001b[C\u001b[C\u001b[C\u001b[C\u001b[Crc/server.ts",
     "scripts": {
-        "build": "rm -rf dist/ && prettier --write ./src && tsc",
+        "build": "rm -rf dist/ && tsc",
         "dev": "nodemon src/server.ts",
-        "start": "node dist/server.js"
+        "start": "node dist/server.js",
+        "format": "prettier --write ./src"
     },
     "repository": {
         "type": "git",
