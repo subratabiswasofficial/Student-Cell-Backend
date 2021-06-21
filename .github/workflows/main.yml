@@ -22,6 +22,7 @@ jobs:
               uses: actions/setup-node@v2
               with:
                   node-version: ${{ matrix.node-version }}
+            - run: git pull
             - run: npm i
             - run: npm run build
             - run: pm2 restart express-app
