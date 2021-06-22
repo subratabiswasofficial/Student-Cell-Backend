@@ -28,5 +28,5 @@ jobs:
               run: npm run build
             - name: "Run Pm2"
               env: 
-                PORT: 4000
+                PORT: 3000
               run: pm2 restart express-app
