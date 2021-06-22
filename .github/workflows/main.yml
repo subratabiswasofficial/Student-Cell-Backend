@@ -32,6 +32,4 @@ jobs:
                 echo NODE_ENV=${{secrets.NODE_ENV}} >> .env
                 echo SERVER_PORT=${{secrets.SERVER_PORT}} >> .env
             - name: "Run Pm2"
-              env: 
-                PORT: 3000
               run: pm2 restart express-app
