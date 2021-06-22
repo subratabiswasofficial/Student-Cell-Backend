@@ -29,8 +29,8 @@ jobs:
             - name: create env file
               run: |
                 touch .env
-                echo NODE_ENV=production >> .env
-                echo PORT=3000 >> .env
+                echo NODE_ENV=${{secrets.NODE_ENV}} >> .env
+                echo SERVER_PORT=${{secrets.SERVER_PORT}} >> .env
             - name: "Run Pm2"
               env: 
                 PORT: 3000
