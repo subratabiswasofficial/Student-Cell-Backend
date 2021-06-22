@@ -26,6 +26,11 @@ jobs:
               run: npm install
             - name: "Build Code"
               run: npm run build
+            - name: create env file
+              run: |
+                touch .env
+                echo NODE_ENV=production >> .env
+                echo PORT=3000 >> .env
             - name: "Run Pm2"
               env: 
                 PORT: 3000
