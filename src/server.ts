@@ -2,9 +2,13 @@ import express from 'express';
 import logging from './config/logging';
 import config from './config/config';
 import routes from './routes';
+import db from './config/db';
 
 const NAMESPACE = 'Server';
 const app = express();
+
+/** Database connection */
+db.connect();
 
 /** Logging the request */
 app.use((req, res, next) => {

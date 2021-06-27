@@ -1,2 +1,3 @@
 import sampleApi from './sample';
-export default { sampleApi };
+import auth from './auth';
+export default { sampleApi, auth };
