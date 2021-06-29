@@ -1,13 +1,16 @@
 import { Document } from 'mongoose';
+import { Request } from 'express';
 
 interface IUser extends Document {
+    uuid: string;
+    type: string;
     email: string;
     firstName: string;
     lastName: string;
     phoneNumber: number;
     address: string;
     password: string;
-    avatar: {
+    avatar?: {
         location: string;
         key: string;
     };
@@ -19,12 +22,27 @@ interface ILogin {
 }
 
 interface IRegister {
-    email: string;
-    firstName: string;
-    lastName: string;
-    phoneNumber: number;
-    address: string;
+    type?: string;
+    email?: string;
+    firstName?: string;
+    lastName?: string;
+    phoneNumber?: number;
+    address?: string;
     password: string;
 }
 
-export { IUser, ILogin, IRegister };
+interface jwtPayload {
+    id: string;
+    type: string;
+    uuid: string;
+}
+
+interface AuthRequest extends Request {
+    user?: {
+        id: string;
+        uuid: string;
+        type: string;
+    };
+}
+
+export { IUser, ILogin, IRegister, AuthRequest, jwtPayload };
